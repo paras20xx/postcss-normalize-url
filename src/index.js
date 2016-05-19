@@ -50,7 +50,9 @@ function transformDecl (decl, opts) {
             url.value = convert(url.value, opts);
         }
 
+        escapeChars.lastIndex = 0;  // Required for Node JS v0.10
         if (escapeChars.test(url.value)) {
+            escapeChars.lastIndex = 0;
             escaped = url.value.replace(escapeChars, '\\$1');
             if (escaped.length < url.value.length + (url.type === 'string' ? 2 : 0)) {
                 url.value = escaped;
