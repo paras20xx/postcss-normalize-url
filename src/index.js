@@ -66,7 +66,7 @@ function transformDecl (decl, opts) {
     }).toString();
 }
 
-module.exports = postcss.plugin('postcss-normalize-url', opts => {
+module.exports = postcss.plugin('postcss-normalize-url-paras20xx', opts => {
     opts = {
         normalizeProtocol: false,
         stripFragment: false,
